@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f766e">
+  <meta name="description" content="CMA Exam Pro - Master the CMA Intermediate MCQ with 800+ questions across Financial Accounting, Taxation & GST, and Cost Accounting">
+  <meta name="keywords" content="CMA, exam, MCQ, accounting, intermediate, cost accounting, taxation, GST">
+  <title>CMA Exam Pro — Intermediate MCQ Master</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #0f766e;
+      --primary-light: #14b8a6;
+      --primary-dark: #0d5d56;
+      --accent: #fbbf24;
+      --bg: #f0f9f8;
+      --card: #ffffff;
+      --text: #0b1417;
+      --text-light: #4b5563;
+      --border: #e5e7eb;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    html, body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    
+    header > * {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      backdrop-filter: blur(10px);
+    }
+    
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.025em;
+    }
+    
+    .tagline {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+    
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 0.875rem;
+      opacity: 0.85;
+    }
+    
+    /* Navigation */
+    nav {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    
+    .nav-brand {
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Main CTA */
+    .cta-section {
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: 1rem 3rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.125rem;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(15, 118, 110, 0.3);
+    }
+    
+    /* Papers Grid */
+    .papers-section {
+      padding: 4rem 0;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: var(--text);
+    }
+    
+    .papers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    .paper-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+    
+    .paper-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+    
+    .paper-code {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .paper-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+    
+    .paper-desc {
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    
+    .paper-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    
+    .question-count {
+      font-size: 0.875rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+    
+    .paper-btn {
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: background 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .paper-btn:hover {
+      background: var(--primary-dark);
+    }
+    
+    /* Features Section */
+    .features-section {
+      padding: 4rem 0;
+      background: white;
+      margin: 4rem 0;
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .feature {
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .feature-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    
+    .feature-desc {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+    
+    /* Quick Stats */
+    .quick-stats {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: 3rem;
+      border-radius: 1rem;
+      margin: 4rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    
+    .quick-stat {
+      text-align: center;
+    }
+    
+    .quick-stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      display: block;
+    }
+    
+    .quick-stat-text {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+      padding: 4rem 0;
+    }
+    
+    .faq-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    
+    .faq-item {
+      background: white;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+    
+    .faq-item:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow);
+    }
+    
+    .faq-question {
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .faq-icon {
+      color: var(--primary);
+      font-size: 1.25rem;
+    }
+    
+    .faq-answer {
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--text);
+      color: white;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: var(--primary-light);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    
+    .footer-credit {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.875rem;
+      opacity: 0.8;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .tagline {
+        font-size: 1rem;
+      }
+      
+      .stats {
+        gap: 1rem;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+      
+      .cta-button {
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .papers-grid {
+        gap: 1rem;
+      }
+      
+      .container {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-brand">📊 CMA Exam Pro</div>
+      <ul class="nav-links">
+        <li><a href="#papers">Papers</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <div class="header-badge">🎓 CMA Intermediate Preparation</div>
+    <h1>CMA Exam Pro</h1>
+    <p class="tagline">Master 800+ MCQs across Financial Accounting, Taxation & GST, and Cost Accounting</p>
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-number">800+</span>
+        <span class="stat-label">Questions</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Papers</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Explained</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main CTA -->
+  <div class="container">
+    <section class="cta-section">
+      <a href="CMA_Exam_Pro%20%20.html" class="cta-button">🚀 Start Practicing Now</a>
+    </section>
+
+    <!-- Quick Stats -->
+    <div class="quick-stats">
+      <div class="quick-stat">
+        <span class="quick-stat-number">144</span>
+        <span class="quick-stat-text">Financial Accounting Questions</span>
+      </div>
+      <div class="quick-stat">
+        <span class="quick-stat-number">267</span>
+        <span class="quick-stat-text">Taxation & GST Questions</span>
+      </div>
+      <div class="quick-stat">
+        <span class="quick-stat-number">389</span>
+        <span class="quick-stat-text">Cost Accounting Questions</span>
+      </div>
+    </div>
+
+    <!-- Papers Section -->
+    <section class="papers-section" id="papers">
+      <h2 class="section-title">📚 Exam Papers</h2>
+      <div class="papers-grid">
+        <!-- Paper 6 -->
+        <div class="paper-card">
+          <span class="paper-code">PAPER 6</span>
+          <h3 class="paper-title">Financial Accounting</h3>
+          <p class="paper-desc">Master fundamental accounting principles, depreciation methods, journal entries, error correction, and partnership accounting.</p>
+          <div class="paper-meta">
+            <span class="question-count">📝 144 Questions</span>
+            <button class="paper-btn" onclick="openApp('P6')">Start</button>
+          </div>
+        </div>
+
+        <!-- Paper 7 -->
+        <div class="paper-card">
+          <span class="paper-code">PAPER 7</span>
+          <h3 class="paper-title">Taxation & GST</h3>
+          <p class="paper-desc">Deep dive into income tax, residential status, capital gains, deductions, GST registration, and customs valuation.</p>
+          <div class="paper-meta">
+            <span class="question-count">📝 267 Questions</span>
+            <button class="paper-btn" onclick="openApp('P7')">Start</button>
+          </div>
+        </div>
+
+        <!-- Paper 8 -->
+        <div class="paper-card">
+          <span class="paper-code">PAPER 8</span>
+          <h3 class="paper-title">Cost & Management Accounting</h3>
+          <p class="paper-desc">Comprehensive coverage of costing methods, budgeting, variance analysis, process costing, and activity-based costing.</p>
+          <div class="paper-meta">
+            <span class="question-count">📝 389 Questions</span>
+            <button class="paper-btn" onclick="openApp('P8')">Start</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <h2 class="section-title">✨ Features</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature-icon">🎯</div>
+            <h3 class="feature-title">Smart Navigation</h3>
+            <p class="feature-desc">Filter by paper, topic, and difficulty. Jump to any question instantly.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">💡</div>
+            <h3 class="feature-title">Detailed Explanations</h3>
+            <p class="feature-desc">Every question includes comprehensive explanations for correct and incorrect options.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🌙</div>
+            <h3 class="feature-title">Dark/Light Mode</h3>
+            <p class="feature-desc">Study comfortably with switchable dark and light themes tailored for extended sessions.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h3 class="feature-title">Progress Tracking</h3>
+            <p class="feature-desc">Monitor your performance with visual progress indicators and statistics.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🔍</div>
+            <h3 class="feature-title">Full-Text Search</h3>
+            <p class="feature-desc">Search across all 800+ questions by keyword or topic instantly.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h3 class="feature-title">Mobile Friendly</h3>
+            <p class="feature-desc">Optimized for all devices. Study anywhere, anytime on your phone or tablet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+      <h2 class="section-title">❓ Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon">Q1</span>
+            How do I use CMA Exam Pro?
+          </div>
+          <div class="faq-answer">
+            Simply click on one of the three papers (P6, P7, or P8) to start practicing. You can navigate through questions, view detailed explanations, and track your progress. Use the search feature to find specific topics.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon">Q2</span>
+            Is this completely free?
+          </div>
+          <div class="faq-answer">
+            Yes! CMA Exam Pro is completely free and open-source. All 800+ questions with detailed explanations are available at no cost.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon">Q3</span>
+            Can I download this for offline use?
+          </div>
+          <div class="faq-answer">
+            Absolutely! The entire application is contained in a single HTML file. Download it and use it offline on any device. All data is stored locally in your browser.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon">Q4</span>
+            Which CMA level is this for?
+          </div>
+          <div class="faq-answer">
+            CMA Exam Pro covers the CMA Intermediate level with three papers: Financial Accounting (P6), Taxation & GST (P7), and Cost & Management Accounting (P8).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon">Q5</span>
+            Are the answers verified?
+          </div>
+          <div class="faq-answer">
+            Yes! All answers and explanations are based on official CMA Intermediate curriculum and accounting standards. Each explanation includes references to relevant standards (AS, CAS, Income Tax Act, GST Act).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-icon">Q6</span>
+            How often is the content updated?
+          </div>
+          <div class="faq-answer">
+            The application is regularly updated with new questions and corrections. Check back frequently for the latest content, or watch the repository for updates.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <h3>CMA Exam Pro</h3>
+      <p style="margin: 1rem 0; opacity: 0.9;">Master your CMA Intermediate exams with comprehensive MCQ practice</p>
+      <div class="footer-links">
+        <a href="https://github.com/alluzalan/cma-exam-pro" target="_blank">GitHub Repository</a>
+        <a href="mailto:support@example.com">Contact</a>
+        <a href="#papers">Papers</a>
+        <a href="#features">Features</a>
+      </div>
+      <div class="footer-credit">
+        <p>© 2026 CMA Exam Pro. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Built with ❤️ for CMA aspirants | <a href="https://github.com/alluzalan/cma-exam-pro" target="_blank" style="color: var(--primary-light);">Open Source</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function openApp(paper) {
+      window.location.href = 'CMA_Exam_Pro%20%20.html' + (paper ? `#${paper}` : '');
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
